@@ -4,6 +4,7 @@ import reactLogo from './assets/react.svg';
 import viteLogo from './assets/vite.svg';
 import heroImg from './assets/hero.png';
 import './App.css';
+import './global.css';
 
 const App2 = () => {
   const [count, setCount] = useState(0);
@@ -16,7 +17,8 @@ const App2 = () => {
           <img src={reactLogo} className="framework" alt="React logo" />
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
-        <div>
+        <div className="hero-title">
+          {/* <div> */}
           <h1>Get started</h1>
           <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>

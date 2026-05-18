@@ -63,10 +63,175 @@
   /* Status */
   --status-warning: var(--color-brand-300);
   --status-highlight: var(--color-accent);
+
+  /* =========================================================
+   FONT FAMILIES
+   ========================================================= */
+
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* =========================================================
+   DESKTOP TYPOGRAPHY TOKENS
+   ========================================================= */
+
+  /* Hero */
+  --text-hero-display-font: var(--font-heading);
+  --text-hero-display-size: 64px;
+  --text-hero-display-line-height: 72px;
+
+  --text-hero-display-relaxed-font: var(--font-heading);
+  --text-hero-display-relaxed-size: 64px;
+  --text-hero-display-relaxed-line-height: 80px;
+
+  /* Heading XL */
+  --text-heading-xl-font: var(--font-heading);
+  --text-heading-xl-size: 48px;
+  --text-heading-xl-line-height: 56px;
+
+  --text-heading-xl-relaxed-font: var(--font-heading);
+  --text-heading-xl-relaxed-size: 48px;
+  --text-heading-xl-relaxed-line-height: 60px;
+
+  /* Heading LG */
+  --text-heading-lg-font: var(--font-heading);
+  --text-heading-lg-size: 32px;
+  --text-heading-lg-line-height: 40px;
+
+  --text-heading-lg-relaxed-font: var(--font-heading);
+  --text-heading-lg-relaxed-size: 32px;
+  --text-heading-lg-relaxed-line-height: 52px;
+
+  /* Heading MD */
+  --text-heading-md-font: var(--font-heading);
+  --text-heading-md-size: 24px;
+  --text-heading-md-line-height: 32px;
+
+  /* Body Large */
+  --text-body-lg-font: var(--font-body);
+  --text-body-lg-size: 18px;
+  --text-body-lg-line-height: 28px;
+
+  /* Body Default */
+  --text-body-font: var(--font-body);
+  --text-body-size: 16px;
+  --text-body-line-height: 24px;
+
+  --text-body-relaxed-font: var(--font-body);
+  --text-body-relaxed-size: 16px;
+  --text-body-relaxed-line-height: 26px;
+
+  --text-body-tight-font: var(--font-body);
+  --text-body-tight-size: 16px;
+  --text-body-tight-line-height: normal;
+
+  /* Small */
+  --text-small-font: var(--font-body);
+  --text-small-size: 14px;
+  --text-small-line-height: 20px;
+
+  /* Caption */
+  --text-caption-font: var(--font-body);
+  --text-caption-size: 12px;
+  --text-caption-line-height: 16px;
 }
 
 /* Base styles (mobile - first) */
 
 /* Table and larger screens  */
 @media (min-width: 768px) {
+  /* =========================================================
+     MOBILE TYPOGRAPHY OVERRIDES
+     ========================================================= */
+  :root {
+    /* Hero */
+    --text-hero-display-size: 48px;
+    --text-hero-display-line-height: 56px;
+
+    --text-hero-display-relaxed-size: 40px;
+    --text-hero-display-relaxed-line-height: 48px;
+
+    /* Heading XL */
+    --text-heading-xl-size: 40px;
+    --text-heading-xl-line-height: 50px;
+
+    /* Heading LG */
+    --text-heading-lg-size: 32px;
+    --text-heading-lg-line-height: 40px;
+
+    /* Special Inter Large */
+    --text-heading-inter-size: 32px;
+    --text-heading-inter-line-height: 20px;
+
+    /* Heading MD */
+    --text-heading-md-size: 24px;
+    --text-heading-md-line-height: 32px;
+
+    --text-heading-md-relaxed-size: 24px;
+    --text-heading-md-relaxed-line-height: 39px;
+
+    /* Body Large */
+    --text-body-lg-size: 18px;
+    --text-body-lg-line-height: 28px;
+
+    --text-body-lg-relaxed-size: 18px;
+    --text-body-lg-relaxed-line-height: 29px;
+
+    /* Body */
+    --text-body-size: 16px;
+    --text-body-line-height: 24px;
+
+    --text-body-tight-line-height: normal;
+
+    /* Special serif body */
+    --text-body-serif-font: var(--font-heading);
+    --text-body-serif-size: 16px;
+    --text-body-serif-line-height: 24px;
+
+    --text-body-relaxed-line-height: 26px;
+
+    /* Small */
+    --text-small-size: 14px;
+    --text-small-line-height: 20px;
+
+    /* Caption */
+    --text-caption-size: 12px;
+    --text-caption-line-height: 16px;
+  }
+
+  .hero-title {
+    font-family: var(--text-hero-display-font);
+    font-size: var(--text-hero-display-size);
+    line-height: var(--text-hero-display-line-height);
+  }
+
+  .body-text {
+    font-family: var(--text-body-font);
+    font-size: var(--text-body-size);
+    line-height: var(--text-body-line-height);
+  }
+
+  .caption {
+    font-family: var(--text-caption-font);
+    font-size: var(--text-caption-size);
+    line-height: var(--text-caption-line-height);
+  }
+}
+
+.hero-title {
+  font-family: var(--text-hero-display-font);
+  font-size: var(--text-hero-display-size);
+  line-height: var(--text-hero-display-line-height);
+}
+
+.body-text {
+  font-family: var(--text-body-font);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line-height);
+}
+
+.caption {
+  font-family: var(--text-caption-font);
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-line-height);
 }
