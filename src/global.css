@@ -1,0 +1,72 @@
+/* colors */
+:root {
+  /* ========================================
+   BASE PALETTE TOKENS
+   Raw brand colors — NEVER use directly in components
+   ======================================== */
+
+  --color-brand-50: #fef7f3;
+  --color-brand-100: #fff8f3;
+  --color-brand-200: #f2e7dd;
+  --color-brand-300: #f3a55c;
+  --color-brand-400: #906d54;
+
+  --color-primary-500: #134c66;
+  --color-primary-700: #2d3d45;
+  --color-primary-900: #121a28;
+
+  --color-accent-500: #a64ea9;
+
+  /* ========================================
+   SEMANTIC TOKENS
+   Use THESE in components
+   ======================================== */
+
+  /* Backgrounds */
+  --bg-page: var(--color-brand-50);
+  --bg-surface: var(--color-brand-100);
+  --bg-muted: var(--color-brand-200);
+
+  /* Text */
+  --text-primary: var(--color-primary-900);
+  --text-secondary: var(--color-primary-700);
+  --text-muted: var(--color-brand-400);
+  --text-inverse: #ffffff;
+
+  /* Brand / Actions */
+  --color-primary: var(--color-primary-500);
+  --color-primary-hover: var(--color-primary-700);
+  --color-primary-active: var(--color-primary-900);
+
+  /* Accent */
+  --color-accent: var(--color-accent-500);
+
+  /* Borders */
+  --border-default: var(--color-brand-200);
+  --border-strong: var(--color-brand-400);
+
+  /* Buttons */
+  --button-primary-bg: var(--color-primary);
+  --button-primary-text: var(--text-inverse);
+
+  --button-secondary-bg: var(--bg-surface);
+  --button-secondary-text: var(--text-primary);
+
+  /* Cards */
+  --card-bg: var(--bg-surface);
+  --card-border: var(--border-default);
+
+  /* Navigation */
+  --nav-bg: var(--color-primary-900);
+  --nav-text: var(--text-inverse);
+
+  /* Status */
+  --status-warning: var(--color-brand-300);
+  --status-highlight: var(--color-accent);
+}
+
+/* Base styles (mobile - first) */
+
+/* Table and larger screens  */
+@media (min-width: 768px) {
+}
