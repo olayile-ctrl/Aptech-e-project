@@ -1,0 +1,159 @@
+/* Base navbar container */
+.navbar {
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  background: #fff; /* Picked from your tokens to match that warm cream tint */
+  box-sizing: border-box;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 40px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Left: Logo/Brand heading */
+.navbar-logo {
+  font-family: 'Georgia', serif; /* Editorial look from your image */
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--bg); /* Uses your #08060d / #f3f4f6 token */
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Center: Flex link container */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  align-items: center;
+}
+
+/* Base item link style */
+.nav-item {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--bg); /* Uses your #6b6375 / #9ca3af token */
+  cursor: pointer;
+  position: relative;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #f3a55c;
+}
+
+/* Active Indicator Line matching your exact image layout */
+.nav-item.active {
+  color: var(--bg);
+  font-weight: 600;
+}
+
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* Sits perfectly under the active text */
+  width: 100%;
+  height: 2px;
+  background-color: #f3a55c; /* Matches active text color from tokens */
+}
+
+/* Right: Profile Icon container */
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--bg);
+}
+
+.profile-icon {
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.2s ease;
+}
+
+.profile-icon:hover {
+  opacity: 0.8;
+}
+
+/* Responsive adjustment for clean scaling on smaller viewports */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 20px;
+    height: 70px;
+  }
+
+  .navbar-logo {
+    font-size: 20px;
+  }
+
+  .navbar-links {
+    gap: 16px;
+  }
+
+  .nav-item {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================================
+   MEDIA QUERIES (TABLETS & PHONES)
+   ========================================================================= */
+
+/* Tablets and small laptops */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 24px;
+    height: 70px;
+  }
+
+  .navbar-logo {
+    font-size: 20px;
+  }
+
+  .navbar-links {
+    gap: 16px;
+  }
+}
+
+/* Mobile Phones (Screen widths under 768px) */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    height: auto;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .navbar-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 8px 0;
+  }
+
+  .nav-item {
+    font-size: var(--text-small-size);
+    padding: 4px 0;
+  }
+
+  .navbar-profile {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+}
