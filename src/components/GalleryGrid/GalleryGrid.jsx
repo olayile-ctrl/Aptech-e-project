@@ -25,7 +25,7 @@ export default function GalleryGrid({ items, onOpen }) {
               <GalleryCard
                 key={item.id}
                 item={item}
-                onOpen={() => onOpen(items.indexOf(item))}
+                onOpen={() => onOpen(item)}
               />
             ))}
           </div>

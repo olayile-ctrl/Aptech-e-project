@@ -1,8 +1,8 @@
 /* src/components/Lightbox/Lightbox.jsx */
 import "./Lightbox.css";
 
-export default function Lightbox({ items, index, onClose, onPrev, onNext }) {
-  const item = items[index];
+export default function Lightbox({ item, imageIndex, onClose, onPrev, onNext }) {
+  const totalImages = item.images.length;
 
   return (
     <div
@@ -12,25 +12,31 @@ export default function Lightbox({ items, index, onClose, onPrev, onNext }) {
       aria-label={`Viewing ${item.name}`}
       onClick={onClose}
     >
-      {/* Prev */}
-      <button
-        className="lightbox__nav lightbox__nav--prev"
-        onClick={(e) => { e.stopPropagation(); onPrev(); }}
-        aria-label="Previous site"
-      >
-        ‹
-      </button>
+      {/* Only show nav arrows if the monument has more than one image */}
+      {totalImages > 1 && (
+        <button
+          className="lightbox__nav lightbox__nav--prev"
+          onClick={(e) => { e.stopPropagation(); onPrev(); }}
+          aria-label="Previous image"
+        >
+          ‹
+        </button>
+      )}
 
-      {/* Main content */}
       <div
         className="lightbox__inner"
         onClick={(e) => e.stopPropagation()}
       >
-        <figure className="lightbox__figure" key={item.id}>
+        <figure className="lightbox__figure">
+          {/*
+           * key={imageIndex} forces the <img> to remount on each
+           * navigation so the fade-in animation replays every time.
+           */}
           <img
+            key={imageIndex}
             className="lightbox__img"
-            src={item.images[0]}
-            alt={item.name}
+            src={item.images[imageIndex]}
+            alt={`${item.name} — image ${imageIndex + 1} of ${totalImages}`}
           />
 
           <figcaption className="lightbox__meta">
@@ -50,21 +56,24 @@ export default function Lightbox({ items, index, onClose, onPrev, onNext }) {
           </figcaption>
         </figure>
 
-        <p className="lightbox__counter">
-          {index + 1} / {items.length}
-        </p>
+        {/* Image counter — e.g. "3 / 8" */}
+        {totalImages > 1 && (
+          <p className="lightbox__counter">
+            {imageIndex + 1} / {totalImages}
+          </p>
+        )}
       </div>
 
-      {/* Next */}
-      <button
-        className="lightbox__nav lightbox__nav--next"
-        onClick={(e) => { e.stopPropagation(); onNext(); }}
-        aria-label="Next site"
-      >
-        ›
-      </button>
+      {totalImages > 1 && (
+        <button
+          className="lightbox__nav lightbox__nav--next"
+          onClick={(e) => { e.stopPropagation(); onNext(); }}
+          aria-label="Next image"
+        >
+          ›
+        </button>
+      )}
 
-      {/* Close */}
       <button
         className="lightbox__close"
         onClick={onClose}
